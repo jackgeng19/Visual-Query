@@ -1,15 +1,16 @@
 # Visual-Query
 (the sample output qa data is under folder "QA_data" The code for generating the data is under "QA_automation")
 
-##
-Query an visual object. 
+## Goal: Query an visual object. 
 {"key": "visual_object", "value": "timestamp_last_appear"}
 
 ## QA Data Automation
 
 ### Current chat-gpt prompt description
 Identify objects appear in the text and ask the question when that object appear in the video.
+
 input: the annotation/summary of one single clip from the video with description, start time, and end time.
+
 output: Q: When does object X appear? A: start time - end time.
 
 ### Problem with current policy
