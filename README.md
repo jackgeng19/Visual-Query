@@ -8,11 +8,13 @@ Query an visual object.
 ## QA Data Automation
 
 ### Current chat-gpt prompt description
-Identify objects appear in the text and ask the question where that object appear in the video.
+Identify objects appear in the text and ask the question when that object appear in the video.
+input: the annotation/summary of one single clip from the video with description, start time, and end time.
+output: Q: When does object X appear? A: start time - end time.
 
 ### Problem with current policy
 - The json file contains annotation and summary. The summaries largely contains physical object, but the annotations contains mostly movements that are not descriptive e.g. X moves his head around. And the non-descriptive annotation will make gpt ask questions that does not make sense. Do we ignore annotations to avoid noise in the data?
-- The current policy will identify each object and a timestamp when they show up in the text. For example, if in two separate time intervals of one clip, a yellow key appears in both time intervals, then the data will contain two different timestamp for that single object. However, we want to identify the time when the object last appears. Should we use another policy that takes all the texts in one video clip and ask gpt the question of "when does that object last appears?"
+- The current policy will identify each object and a timestamp when they show up in the text. For example, if in two separate time intervals of one clip, a yellow key appears in both time intervals, then the data will contain two different timestamp for that single object. However, we want to identify the time when the object last appears. Should we use another policy that takes the descriptions of all clips in the entire video and ask gpt the question of "when does that object last appears?"
 
   - Pros for current design:
     - It is easy for gpt model to identify objects from a single text description (compared to given the whole context in a video).
