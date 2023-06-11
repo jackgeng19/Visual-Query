@@ -1,5 +1,6 @@
 # Visual-Query
 (the sample output qa data is under folder "QA_data" The code for generating the data is under "QA_automation")
+View sampe generated QA data without download the json: http://jsonblob.com/1117586296569872384
 
 ## Goal: Query an visual object. 
 {"key": "visual_object", "value": "timestamp_last_appear"}
