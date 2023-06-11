@@ -22,9 +22,9 @@ output: Q: When does object X appear? A: start time - end time.
   - Cons for current design:
     - The data will contain multiple timestamp for one single object if that object appears more than once (may not be a problem for our purpose?).
     
-  - Pros of the other design:
+  - Pros for the other design:
     - The data will only have timestamp for the last occurance of an object.
-  - Cons of the other design:
+  - Cons for the other design:
     - Hard to verify the correctness of the data.
     - Hard for the gpt model to output the correct answer given the entire video narration as context: 1. Identify objects that appears. 2. Finding the last occurance of an object.
     
