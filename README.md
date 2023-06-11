@@ -1,4 +1,5 @@
 # Visual-Query
+(the sample output qa data is under folder "QA_data" The code for generating the data is under "QA_automation")
 
 ##
 Query an visual object. 
