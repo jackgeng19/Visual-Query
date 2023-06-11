@@ -12,7 +12,14 @@ Identify objects appear in the text and ask the question where that object appea
 
 ### Problem with current policy
 - The json file contains annotation and summary. The summaries largely contains physical object, but the annotations contains mostly movements that are not descriptive e.g. X moves his head around. And the non-descriptive annotation will make gpt ask questions that does not make sense. Do we ignore annotations to avoid noise in the data?
-- The current policy will identify each object and a timestamp when they show up in the text. For example, if in two separate time intervals of one clip, a yellow key appears in both time intervals, then the data will contain two different timestamp for that single object. However, we want to identify the time when the object last appears. Should we use another policy that takes all the texts in one video clip and ask gpt the question of "when does that object last appears?" 
+- The current policy will identify each object and a timestamp when they show up in the text. For example, if in two separate time intervals of one clip, a yellow key appears in both time intervals, then the data will contain two different timestamp for that single object. However, we want to identify the time when the object last appears. Should we use another policy that takes all the texts in one video clip and ask gpt the question of "when does that object last appears?"
+
+  - Pros for current design:
+    - It is easy for gpt model to identify objects from a single text description (compared to given the whole context in a video).
+    - The answer has a larger possiblity to be correct because the timestamp for that specific text description is given in the prompt (It is to say that the job of the gpt model is not to find a timestamp, but instead to identify physical object from the description).
+  - Cons for current design:
+    - The data will contain multiple timestamp for one single object if that object appears more than once (may not be a problem for our purpose?).
+    
   - Pros of the other design:
     - The data will only have timestamp for the last occurance of an object.
   - Cons of the other design:
