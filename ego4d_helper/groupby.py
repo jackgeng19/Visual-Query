@@ -27,17 +27,19 @@ def groupby(out_path: str, input_path: str) -> None:
                 grouped_data[project_id] = {}
                 grouped_data[project_id][key] = value
                 print(grouped_data)
-                grouped_data[project_id][key]['narrations'] = [] 
-                print("nmsl")
+                print(project_id)
+                print(grouped_data[project_id][key]['narrations'])
+                grouped_data[project_id][key]['narrations'] = []
+                print("------------Why it empties all the item in all project_id???--------")
                 print(grouped_data)
                 print(i)
                 print(project_id)
 
+
             grouped_data[project_id][key]['narrations'].append(item)
 
             print(f"{i}, {grouped_data[project_id][key]['narrations']}")
-            # print(">")
-            # print(grouped_data[project_id][key])
+
             i += 1
  
 
