@@ -1,0 +1,36 @@
+{
+    "videos.cba13243-5ad3-4360-87df-6286867c473a": {
+        "narrations": [
+            {
+                "time": 0.0420572,
+                "text": "#C C converses with man X",
+                "_clip_time_start": 0,
+                "_clip_time_end": 0,
+                "_end_time": 0.0420572,
+                "annotator": "1695609517163352",
+                "_project_id": "3111279962304712",
+                "_annotation_uid": "8a908b99-0e31-4427-aa93-c4a2509bbb88"
+            },
+            {
+                "time": 0.7925471999999999,
+                "text": "#C C looks at the green vegetables ",
+                "_clip_time_start": 0.75049,
+                "_clip_time_end": 0.75049,
+                "_end_time": 0.7925471999999999,
+                "annotator": "1695609517163352",
+                "_project_id": "3111279962304712",
+                "_annotation_uid": "8a908b99-0e31-4427-aa93-c4a2509bbb88"
+            },
+            {
+                "time": 11.898337199999999,
+                "text": "#C C cuts vegetables on a chair with her hands.",
+                "_clip_time_start": 11.85628,
+                "_clip_time_end": 11.85628,
+                "_end_time": 11.898337199999999,
+                "annotator": "4288081301262926",
+                "_project_id": "347545199711956",
+                "_annotation_uid": "d47d1694-9461-4e8f-9601-2c8ccc3884ee"
+            }
+        ]
+    }
+}
