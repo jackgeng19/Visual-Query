@@ -1,6 +1,7 @@
 import ijson
 import json
 import sys
+import os
 
 
 def parse(out_path: str, input_path: str) -> None:
@@ -31,9 +32,42 @@ def parse(out_path: str, input_path: str) -> None:
 	with open(out_path, 'w') as outfile:
 		json.dump(output_json, outfile)
 
-def main() -> int:
-	parse('out.json', 'v2/annotations/all_narrations_redacted.json')
-	return 0
 
-if __name__ == '__main__':
-    sys.exit(main())
+def batch_parse(folder):
+    "Parse all json files in a folder."
+    for file in os.listdir(folder):
+        if not file.endswith(".json"):
+            continue
+        parse(f'mod_{file}', f'{file}')
+
+# def main() -> int:
+# 	parse('out.json', 'v2/annotations/all_narrations_redacted.json')
+# 	return 0
+
+if __name__ == "__main__":
+    """ If the input is a single file, the script calls the parse(). Calls the batch_parse() otherwise."""
+    if len(sys.argv) == 1:
+        raise Exception("Function Requires a minimum of 1 argument: Fully Qualified Path to Video or Folder")
+        exit()
+    if ".json" in sys.argv[1]:
+        try:
+            parse(sys.argv[2],sys.argv[1])
+        except:
+            try:
+                parse(sys.argv[1],frameskip = int(sys.argv[2]))
+            except:
+                parse(f'mod_{sys.argv[1]}', sys.argv[1])
+    else:
+        if len(sys.argv) == 6:
+            batch_parse(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+        elif len(sys.argv) == 5:
+            batch_parse(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+        elif len(sys.argv) == 4:
+            batch_parse(sys.argv[1],videoSkip = int(sys.argv[2]),frameSkip = int(sys.argv[3]))
+        elif len(sys.argv) == 3:
+            batch_parse(sys.argv[1],videoSkip = int(sys.argv[2]))
+        elif len(sys.argv) == 2:
+            batch_parse(sys.argv[1])
+        else:
+            raise Exception("Function Requires a minimum of 1 argument: Fully Qualified Path to Video or Folder")
+    # sys.exit(main())
