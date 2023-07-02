@@ -53,19 +53,12 @@ if __name__ == "__main__":
         try:
             parse(sys.argv[2],sys.argv[1])
         except:
-            try:
-                parse(sys.argv[1],frameskip = int(sys.argv[2]))
-            except:
-                parse(f'mod_{sys.argv[1]}', sys.argv[1])
+            parse(f'mod_{sys.argv[1]}', sys.argv[1])
     else:
-        if len(sys.argv) == 6:
-            batch_parse(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
-        elif len(sys.argv) == 5:
-            batch_parse(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
-        elif len(sys.argv) == 4:
-            batch_parse(sys.argv[1],videoSkip = int(sys.argv[2]),frameSkip = int(sys.argv[3]))
-        elif len(sys.argv) == 3:
-            batch_parse(sys.argv[1],videoSkip = int(sys.argv[2]))
+        if len(sys.argv) == 3:
+            # Two folders
+            batch_parse(sys.argv[1])
+            batch_parse(sys.argv[2])
         elif len(sys.argv) == 2:
             batch_parse(sys.argv[1])
         else:
