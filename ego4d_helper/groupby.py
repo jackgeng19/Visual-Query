@@ -26,14 +26,8 @@ def groupby(out_path: str, input_path: str) -> None:
             if project_id not in grouped_data:
                 grouped_data[project_id] = {}
                 grouped_data[project_id][key] = value
-                print(grouped_data)
-                print(project_id)
-                print(grouped_data[project_id][key]['narrations'])
                 grouped_data[project_id][key]['narrations'] = []
-                print("------------Why it empties all the item in all project_id???--------")
-                print(grouped_data)
-                print(i)
-                print(project_id)
+
 
 
             grouped_data[project_id][key]['narrations'].append(item)
